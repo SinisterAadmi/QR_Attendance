@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_attendance/Supabase/SupabaseStudentSignup.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter/services.dart';
-
+import 'package:page_transition/page_transition.dart';
 class StudentSignup extends StatefulWidget {
   const StudentSignup({super.key});
 
@@ -34,7 +33,7 @@ class _StudentSignupState extends State<StudentSignup> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover)
       ),
       child: Scaffold(
@@ -46,8 +45,8 @@ class _StudentSignupState extends State<StudentSignup> {
             children: [
               Container(
                 color: Colors.transparent,
-                padding: EdgeInsets.only(left: 20, top:100),
-                child: Text('Student Signup' ,
+                padding: const EdgeInsets.only(left: 50, top:100),
+                child: const Text('Student Signup' ,
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontSize: 40,
@@ -66,7 +65,7 @@ class _StudentSignupState extends State<StudentSignup> {
                     children: [
                       Row(
                         children: [
-                          Text("  Select your Division", style: TextStyle(
+                          const Text("  Select your Division", style: TextStyle(
                             fontSize: 20,
                           )),
                           Padding(
@@ -93,7 +92,7 @@ class _StudentSignupState extends State<StudentSignup> {
                       ),
                       Row(
                         children: [
-                          Text("  Select your Year", style: TextStyle(
+                          const Text("  Select your Year", style: TextStyle(
                             fontSize: 20,
                           )),
                           Padding(
@@ -127,7 +126,7 @@ class _StudentSignupState extends State<StudentSignup> {
                               filled: true,
                               hintText: 'Enter your Name',
                               border: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     width: 10,
                                   ),
                                   borderRadius: BorderRadius.circular(10)
@@ -151,7 +150,7 @@ class _StudentSignupState extends State<StudentSignup> {
                               filled: true,
                               hintText: 'Enter your Roll-no',
                               border: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     width: 10,
                                   ),
                                   borderRadius: BorderRadius.circular(10)
@@ -187,7 +186,7 @@ class _StudentSignupState extends State<StudentSignup> {
                               filled: true,
                               hintText: 'Enter your Student ID',
                               border: OutlineInputBorder(
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     width: 10,
                                   ),
                                   borderRadius: BorderRadius.circular(10)
@@ -205,7 +204,7 @@ class _StudentSignupState extends State<StudentSignup> {
                         ),
                       ),
           
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       TextFormField(
@@ -215,7 +214,7 @@ class _StudentSignupState extends State<StudentSignup> {
                             filled: true,
                             hintText: 'Enter your Password',
                             border: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   width: 10,
                                 ),
                                 borderRadius: BorderRadius.circular(10)
@@ -231,18 +230,18 @@ class _StudentSignupState extends State<StudentSignup> {
                         onSaved: (value) => _password = value!,
           
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       ElevatedButton(onPressed:()=> _submitForm(context),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.cyan,
                         ),
-                        child: Container(
+                        child: const SizedBox(
           
                           width: 200,
                           height: 45,
-                          child: const Column(
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("LOGIN" , style: TextStyle(

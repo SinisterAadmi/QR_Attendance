@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TeacherPage extends StatefulWidget {
-   TeacherPage({super.key});
+   const TeacherPage({super.key});
 
 
   @override
@@ -13,14 +13,14 @@ class _TeacherState extends State<TeacherPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover )
       ),
       child: Stack(
         children: [
           Container(
-            padding: EdgeInsets.only(left: 25 , top: 50),
-            child: Text('Take Attendance' ,
+            padding: const EdgeInsets.only(left: 25 , top: 50),
+            child: const Text('Take Attendance' ,
             style: TextStyle(
               decoration: TextDecoration.none,
               color: Colors.black,
@@ -30,7 +30,7 @@ class _TeacherState extends State<TeacherPage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 80 , top: 300),
+            padding: const EdgeInsets.only(left: 80 , top: 300),
             child: Scaffold(
               backgroundColor: Colors.transparent,
             body:Container(
@@ -47,7 +47,7 @@ class _TeacherState extends State<TeacherPage> {
                    return DropdownMenuItem<String>(
                      value: value,
                        child: Text(value,
-                       style: TextStyle(
+                       style: const TextStyle(
                          fontSize: 30,
                        ),
                        ),
@@ -59,7 +59,7 @@ class _TeacherState extends State<TeacherPage> {
                       SelectedClass = newValue ;
                     });
                   },
-                hint: Text('  Select the class',
+                hint: const Text('  Select the class',
                   style: TextStyle(
                     fontSize: 30,
                   ),
@@ -69,7 +69,7 @@ class _TeacherState extends State<TeacherPage> {
           ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 105 , top: 500),
+            padding: const EdgeInsets.only(left: 105 , top: 500),
             child: Container(
 
               height: 50,
@@ -83,7 +83,7 @@ class _TeacherState extends State<TeacherPage> {
 
                 ),
                   onPressed: (){}, 
-                  child: Text('Generate QR')
+                  child: const Text('Generate QR')
               ),
             ),
           ),

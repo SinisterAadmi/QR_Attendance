@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:qr_attendance/Student/StudentLoginSignUp.dart';
 class Student extends StatelessWidget {
+  const Student({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ElevatedButton(
         onPressed: (){
-          Navigator.pushNamed(context, 'student button');
+          Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.rightToLeftWithFade,
+              child: const StudentloginSignUp(),
+            ),
+          );
         },
-        child: Container(
+        child: const SizedBox(
           width: 200,
           height: 100,
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Student" , style: TextStyle(

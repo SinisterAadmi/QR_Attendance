@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-
+import 'package:page_transition/page_transition.dart';
+import 'package:qr_attendance/Student/StudentLogin.dart';
+import 'package:qr_attendance/Student/StudentSignup.dart';
 class StudentloginSignUp extends StatelessWidget {
   const StudentloginSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover)),
+      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Student' ,
+          const Text('Student' ,
             style: TextStyle(
               decoration: TextDecoration.none,
               fontSize: 50 ,
@@ -18,16 +20,22 @@ class StudentloginSignUp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, 'student login button');
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeftWithFade,
+                child: const Studentlogin(),
+              ),
+            );
           },
-            child: Container(
+            child: const SizedBox(
               width: 200,
               height: 100,
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Login" , style: TextStyle(
@@ -43,16 +51,22 @@ class StudentloginSignUp extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, 'student signup button');
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeftWithFade,
+                child: const StudentSignup(),
+              ),
+            );
           },
-            child: Container(
+            child: const SizedBox(
               width: 200,
               height: 100,
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Sign-Up" , style: TextStyle(

@@ -13,6 +13,7 @@ import 'package:qr_attendance/Teacher/Teacher.dart';
 
 
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
@@ -23,14 +24,14 @@ Future<void> main() async {
     debugShowCheckedModeBanner: false,
     initialRoute: 'login',
     routes: {
-      'login': (context)=>LoginPage(),
-      'teacher button': (context)=>TeacherloginSignUp(),
-      'student button': (context)=>StudentloginSignUp(),
-      'teacher login button': (context)=>Teacherlogin(),
-      'student login button': (context)=>Studentlogin(),
-      'teacher': (context)=>TeacherPage(),
-      'teacher signup button': (context)=>TeacherSignup(),
-      'student signup button': (context)=>StudentSignup(),
+      'login': (context)=>const LoginPage(),
+      'teacher button': (context)=>const TeacherloginSignUp(),
+      'student button': (context)=>const StudentloginSignUp(),
+      'teacher login button': (context)=>const Teacherlogin(),
+      'student login button': (context)=>const Studentlogin(),
+      'teacher': (context)=>const TeacherPage(),
+      'teacher signup button': (context)=>const TeacherSignup(),
+      'student signup button': (context)=>const StudentSignup(),
     },
   ),
   );

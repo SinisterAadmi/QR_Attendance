@@ -22,9 +22,9 @@ class AuthGateTeacher extends StatelessWidget {
           final session = snapshot.hasData ? snapshot.data!.session : null;
 
           if(session != null){
-            return TeacherPage();
+            return const TeacherPage();
           } else {
-            return Teacherlogin();
+            return const Teacherlogin();
           }
         }
     );
