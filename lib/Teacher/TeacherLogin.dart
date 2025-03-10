@@ -72,7 +72,9 @@ class _TeacherloginState extends State<Teacherlogin> {
                      SizedBox(
                        height: 40,
                      ),
-                     ElevatedButton(onPressed: (){},
+                     ElevatedButton(onPressed: (){
+                       Navigator.pushNamed(context, 'teacher');
+                     },
                        style: ElevatedButton.styleFrom(
                          backgroundColor: Colors.cyan,
                        ),
