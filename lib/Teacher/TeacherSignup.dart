@@ -67,7 +67,7 @@ class _TeacherSignupState extends State<TeacherSignup> {
 
                             fillColor: Colors.grey.shade200,
                             filled: true,
-                            hintText: 'Enter your Email',
+                            hintText: 'Enter your Teacher ID',
                             border: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 10,

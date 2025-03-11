@@ -30,7 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  supabase_flutter: ^1.10.3
+  supabase_flutter: ^2.8.4
+
 
 
 
