@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:qr_attendance/Teacher/Teacher.dart';
 
 class Teacherlogin extends StatefulWidget {
   const Teacherlogin({super.key});
@@ -11,7 +13,7 @@ class _TeacherloginState extends State<Teacherlogin> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover)
       ),
       child: Scaffold(
@@ -21,8 +23,8 @@ class _TeacherloginState extends State<Teacherlogin> {
             children: [
               Container(
                 color: Colors.transparent,
-                padding: EdgeInsets.only(left: 40, top:100),
-                child: Text('Teacher Login' ,
+                padding: const EdgeInsets.only(left: 40, top:100),
+                child: const Text('Teacher Login' ,
                 style: TextStyle(
                   decoration: TextDecoration.none,
                   fontSize: 50,
@@ -45,14 +47,14 @@ class _TeacherloginState extends State<Teacherlogin> {
                          filled: true,
                          hintText: 'Enter your E-mail',
                          border: OutlineInputBorder(
-                           borderSide: BorderSide(
+                           borderSide: const BorderSide(
                              width: 10,
                            ),
                            borderRadius: BorderRadius.circular(10)
                          )
                        ),
                      ),
-                     SizedBox(
+                     const SizedBox(
                        height: 40,
                      ),
                      TextField(
@@ -62,25 +64,33 @@ class _TeacherloginState extends State<Teacherlogin> {
                              filled: true,
                              hintText: 'Enter your Password',
                              border: OutlineInputBorder(
-                                 borderSide: BorderSide(
+                                 borderSide: const BorderSide(
                                    width: 10,
                                  ),
                                  borderRadius: BorderRadius.circular(10)
                              )
                          ),
                      ),
-                     SizedBox(
+                     const SizedBox(
                        height: 40,
                      ),
-                     ElevatedButton(onPressed: (){},
+                     ElevatedButton(onPressed: (){
+                       Navigator.push(
+                         context,
+                         PageTransition(
+                           type: PageTransitionType.rightToLeftWithFade,
+                           child: const TeacherPage(),
+                         ),
+                       );
+                     },
                        style: ElevatedButton.styleFrom(
                          backgroundColor: Colors.cyan,
                        ),
-                         child: Container(
+                         child: const SizedBox(
 
                            width: 200,
                            height: 100,
-                           child: const Column(
+                           child: Column(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children: [
                                Text("LOGIN" , style: TextStyle(

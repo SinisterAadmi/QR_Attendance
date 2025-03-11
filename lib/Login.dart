@@ -7,7 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage('assets/Login.jpg'),
           fit: BoxFit.cover
@@ -16,17 +16,17 @@ class LoginPage extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 35 , top: 90),
-              child: Text('My Attendance' ,
+              padding: const EdgeInsets.only(left: 35 , top: 90),
+              child: const Text('My Attendance' ,
                 style: TextStyle(
                   decoration: TextDecoration.none,
-                  fontSize: 45,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black
                 ),
               ),
             ),
-            Scaffold(
+            const Scaffold(
               backgroundColor: Colors.transparent,
               body: Center(
                 child: Column(

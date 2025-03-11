@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qr_attendance/Teacher/TeacherLogin.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:qr_attendance/Teacher/TeacherSignup.dart';
 
 class TeacherloginSignUp extends StatelessWidget {
   const TeacherloginSignUp({super.key});
@@ -6,11 +9,11 @@ class TeacherloginSignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover)),
+      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/Login.jpg') , fit: BoxFit.cover)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Teacher' ,
+          const Text('Teacher' ,
             style: TextStyle(
               decoration: TextDecoration.none,
               fontSize: 50 ,
@@ -18,16 +21,22 @@ class TeacherloginSignUp extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
           ElevatedButton(onPressed: () {
-            Navigator.pushNamed(context, 'teacher login button');
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeftWithFade,
+                child: const Teacherlogin(),
+              ),
+            );
           },
-            child: Container(
+            child: const SizedBox(
         width: 200,
         height: 100,
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Login" , style: TextStyle(
@@ -43,14 +52,22 @@ class TeacherloginSignUp extends StatelessWidget {
         ),
     ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          ElevatedButton(onPressed: () {},
-            child: Container(
+          ElevatedButton(onPressed: () {
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeftWithFade,
+                child: const TeacherSignup(),
+              ),
+            );
+          },
+            child: const SizedBox(
               width: 200,
               height: 100,
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("Sign-Up" , style: TextStyle(
