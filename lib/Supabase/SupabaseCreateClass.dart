@@ -3,24 +3,35 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'package:postgres/postgres.dart';
 
-Future<void> createClassTable(String classname) async {
+Future<void> createClassTable(String classname , String div , String year) async {
   final connection = PostgreSQLConnection(
-    'aws-0-ap-south-1.pooler.supabase.com',
-      6543,
+    'db.kaskwslwxpckpqlxpizs.supabase.co',
+      5432,
     'postgres',
-    username: 'postgres.kaskwslwxpckpqlxpizs',
+    username: 'postgres',
     password: 'singh.pranav',
       useSSL: true
   );
   try {
     await connection.open();
     await connection.query('''
-      CREATE TABLE IF NOT EXISTS class_data (
+      CREATE TABLE IF NOT EXISTS $classname (
         serialno SERIAL PRIMARY KEY,
         rollno INTEGER NOT NULL,
         name TEXT NOT NULL
       );
     ''');
+    await connection.query('''
+     INSERT INTO $classname (rollno, name) 
+  SELECT rollno, name 
+  FROM students 
+  WHERE division = @div AND year = @year
+    ''',
+        substitutionValues: {
+          'div': div,
+          'year': year
+        });
+
   } catch (e) {
     print('Error creating table: $e');
   } finally {
@@ -40,7 +51,7 @@ if (Classname.isNotEmpty ) {
     );
 
     if (response == null) {
-      createClassTable(Classname);
+      createClassTable(Classname , div , year);
       _showSuccessPopup(context);
     } else {
       // Success
