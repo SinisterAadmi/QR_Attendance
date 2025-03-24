@@ -21,16 +21,6 @@ Future<void> createClassTable(String classname , String div , String year) async
         name TEXT NOT NULL
       );
     ''');
-    await connection.query('''
-     INSERT INTO $classname (rollno, name) 
-  SELECT rollno, name 
-  FROM students 
-  WHERE division = @div AND year = @year
-    ''',
-        substitutionValues: {
-          'div': div,
-          'year': year
-        });
 
   } catch (e) {
     print('Error creating table: $e');
