@@ -119,7 +119,9 @@ class _TeacherState extends State<TeacherPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, 'qr-gen');
+                },
                 child: Text('Generate QR'),
               ),
             ),
