@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_attendance/Supabase/SupabaseTeacherSignIn.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:qr_attendance/Teacher/GenerateQR.dart';
-import 'package:intl/intl.dart';
-
 
 class TeacherPage extends StatefulWidget {
   TeacherPage({super.key});
@@ -122,17 +119,7 @@ class _TeacherState extends State<TeacherPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                      MaterialPageRoute(
-                        builder: (context) => GenerateQRCode(
-                          date: DateFormat('dd-MM-yyyy').format(DateTime.now()),
-                          name: selectedClass!,
-                        ),
-                      )
-                  ) ;
-                },
+                onPressed: () {},
                 child: Text('Generate QR'),
               ),
             ),
