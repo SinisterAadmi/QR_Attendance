@@ -1,6 +1,7 @@
 import 'package:qr_attendance/Student/Student.dart';
 import 'package:qr_attendance/Student/StudentLogin.dart';
 import 'package:qr_attendance/Student/StudentSignup.dart';
+
 import 'package:qr_attendance/Teacher/TeacherCreateClass.dart';
 import 'package:qr_attendance/Teacher/TeacherSignup.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
