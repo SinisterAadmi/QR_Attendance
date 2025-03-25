@@ -21,7 +21,6 @@ Future<void> createClassTable(String classname , String div , String year) async
         name TEXT NOT NULL
       );
     ''');
-
   } catch (e) {
     print('Error creating table: $e');
   } finally {
