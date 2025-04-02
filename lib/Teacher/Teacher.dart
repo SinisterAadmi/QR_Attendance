@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:qr_attendance/Supabase/SupabaseCreateClass.dart';
 import 'package:qr_attendance/Supabase/SupabaseTeacherSignIn.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:intl/intl.dart';
+
+String? classname;
+void setCurrentClass(String? value){
+  classname = value;
+}
+
+String? getCurrentClass(){
+  return classname;
+}
+
+String _currentDate = DateFormat('dd-MM-yyyy').format(DateTime.now());
 
 class TeacherPage extends StatefulWidget {
   TeacherPage({super.key});
@@ -93,7 +106,9 @@ class _TeacherState extends State<TeacherPage> {
                   }).toList(),
                   onChanged: (String? newValue) {
                     setState(() {
+
                       selectedClass = newValue;
+                      setCurrentClass(selectedClass);
                     });
                   },
                   hint: Text(

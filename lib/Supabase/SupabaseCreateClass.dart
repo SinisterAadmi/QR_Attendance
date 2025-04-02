@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'package:postgres/postgres.dart';
 
-Future<void> createClassTable(String classname , String div , String year) async {
-  final connection = PostgreSQLConnection(
-    'db.kaskwslwxpckpqlxpizs.supabase.co',
-      5432,
-    'postgres',
-    username: 'postgres',
-    password: 'singh.pranav',
-      useSSL: true
-  );
+
+Future<void> createClassTable(String classname, String div, String year) async {
+  final supabase = Supabase.instance.client;
+
   try {
-    await connection.open();
-    await connection.query('''
-      CREATE TABLE IF NOT EXISTS $classname (
-        serialno SERIAL PRIMARY KEY,
-        rollno INTEGER NOT NULL,
-        name TEXT NOT NULL
-      );
-    ''');
+    // Call the RPC function to create the table
+    final response = await supabase.rpc('create_class_table', params: {
+      '_classname': classname,
+      '_div': div,
+      '_year': year
+    });
+
+    if (response.error != null) {
+      print('Error creating table: ${response.error.message}');
+    } else {
+      print('Table created successfully!');
+    }
   } catch (e) {
     print('Error creating table: $e');
-  } finally {
-    await connection.close();
   }
 }
 
@@ -86,3 +82,7 @@ void _showSuccessPopup(BuildContext context) {
     ),
   );
 }
+
+
+
+

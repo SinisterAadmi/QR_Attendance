@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:qr_attendance/Supabase/SupabaseStudentSignIn.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+
+
+
 class StudentPage extends StatelessWidget {
    StudentPage({super.key});
 
@@ -33,7 +36,9 @@ class StudentPage extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushNamed(context, 'qr-scan');
+                  },
                   child: Text('Scan QR' ,
                     style: TextStyle(
                       fontSize: 20,

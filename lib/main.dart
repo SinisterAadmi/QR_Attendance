@@ -1,3 +1,4 @@
+import 'package:qr_attendance/Student/ScanQR.dart';
 import 'package:qr_attendance/Student/Student.dart';
 import 'package:qr_attendance/Student/StudentLogin.dart';
 import 'package:qr_attendance/Student/StudentSignup.dart';
@@ -39,6 +40,7 @@ Future<void> main() async {
       'student': (context)=>StudentPage(),
       'add-class': (context)=>AddClass(),
       'qr-gen': (context)=>QrLocationPage(),
+      'qr-scan': (context)=>QrCodeScanner(),
     },
   ),
   );
