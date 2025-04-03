@@ -5,6 +5,7 @@ class QrCodeScanner extends StatelessWidget {
   QrCodeScanner({Key? key}) : super(key: key);
 
   final MobileScannerController controller = MobileScannerController();
+  bool _isDialogOpen = false; // Flag to track dialog state
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,29 @@ class QrCodeScanner extends StatelessWidget {
         onDetect: (BarcodeCapture capture) {
           final List<Barcode> barcodes = capture.barcodes;
           for (final barcode in barcodes) {
-            // Here you can handle the scanned QR code value
-            print('Scanned QR Code: ${barcode.rawValue}');
-            // You can also show an alert dialog or navigate to another screen with the scanned value.
+            if (barcode.rawValue != null && !_isDialogOpen) {
+              _isDialogOpen = true;
+              final String qrCode = barcode.rawValue!;
+
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: Text("Scanned Successfully"),
+                  content: Text("QR Code: $qrCode"),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context); // Close
+                        Navigator.pushNamed(context, 'finalStudent');
+                        _isDialogOpen = false;
+                      },
+                      child: Text("OK"),
+                    ),
+                  ],
+                ),
+              );
+              break;
+            }
           }
         },
       ),
