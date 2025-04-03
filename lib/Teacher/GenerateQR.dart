@@ -7,6 +7,9 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:intl/intl.dart';
 
 
+
+
+
 class QrLocationPage extends StatefulWidget {
   @override
   _QrLocationPageState createState() => _QrLocationPageState();
