@@ -45,6 +45,7 @@ class FinalPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () async {
                   Position stdlocation = await getCurrentLocation();
+                  print('${stdlocation.longitude} , ${stdlocation.latitude}');
                   splitQrData(getQRvalue());
                   if(comparelocation(stdlocation.latitude, stdlocation.longitude, getQRlat(), getQRlng())){
                     markAttendance(getQRclassn(), getQRcurrentDate(), _rollnoofstudent);
