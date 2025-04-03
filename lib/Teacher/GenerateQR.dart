@@ -23,7 +23,7 @@ class _QrLocationPageState extends State<QrLocationPage> {
       // Fetch the current location
       Position position = await getCurrentLocation();
       setState(() {
-        qrData = 'Lat: ${position.latitude}, Lng: ${position.longitude} , Class: ${classn}, Date: ${currentDate}';
+        qrData = 'Lat: ${position.latitude},Lng: ${position.longitude},Class: ${classn},Date: ${currentDate}';
       });
     } catch (e) {
       // Handle errors gracefully

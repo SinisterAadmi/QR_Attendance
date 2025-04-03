@@ -19,6 +19,15 @@ String getCurrentUserName(){
   return _currentName;
 }
 
+int _currentRoll = 0;
+void setCurrentRoll(int Roll){
+  _currentRoll = Roll;
+}
+int getCurrentRoll(){
+  return _currentRoll;
+}
+
+
 Future<void> signInCustomID(BuildContext context ,String customID, String password) async {
   final supabase = Supabase.instance.client;
   final response = await supabase
@@ -30,10 +39,12 @@ Future<void> signInCustomID(BuildContext context ,String customID, String passwo
     final  userID = response[0]['id'];
     final storedPassword = response[0]['password'];
     String userName = response[0]['name'];
+    int rollNo = response[0]['roll no'];
 
     if(password == storedPassword){
       setCurrentUserID(userID);
       setCurrentUserName(userName);
+      setCurrentRoll(rollNo);
       _showSuccessPopup(context);
 
     }else{

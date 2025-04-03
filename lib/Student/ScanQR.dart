@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-
+String qrcodedata='';
+setQRvalue(String value){
+  qrcodedata = value;
+}
+String getQRvalue(){
+  return qrcodedata;
+}
 class QrCodeScanner extends StatelessWidget {
   QrCodeScanner({Key? key}) : super(key: key);
 
@@ -18,6 +24,7 @@ class QrCodeScanner extends StatelessWidget {
           for (final barcode in barcodes) {
             if (barcode.rawValue != null && !_isDialogOpen) {
               _isDialogOpen = true;
+              setQRvalue(barcode.rawValue!);
               final String qrCode = barcode.rawValue!;
 
               showDialog(
