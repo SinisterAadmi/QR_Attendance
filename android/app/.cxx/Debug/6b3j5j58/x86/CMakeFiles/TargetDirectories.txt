@@ -1,0 +1,2 @@
+C:/flutterprojects/QR_Attendance/android/app/.cxx/Debug/6b3j5j58/x86/CMakeFiles/edit_cache.dir
+C:/flutterprojects/QR_Attendance/android/app/.cxx/Debug/6b3j5j58/x86/CMakeFiles/rebuild_cache.dir
