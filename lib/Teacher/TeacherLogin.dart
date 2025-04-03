@@ -40,7 +40,7 @@ class _TeacherloginState extends State<Teacherlogin> {
                     decoration: TextDecoration.none,
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   ),
                 ),

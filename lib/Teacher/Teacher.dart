@@ -75,14 +75,14 @@ class _TeacherState extends State<TeacherPage> {
               'Take Attendance',
               style: TextStyle(
                 decoration: TextDecoration.none,
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 55, top: 450),
+            padding: EdgeInsets.only(left: 55, top: 375),
             child: Scaffold(
               backgroundColor: Colors.transparent,
               body: Container(
@@ -93,14 +93,16 @@ class _TeacherState extends State<TeacherPage> {
                 child: isLoading
                     ? Center(child: CircularProgressIndicator())
                     : DropdownButton<String>(
-                  dropdownColor: Colors.white,
+                  dropdownColor: Colors.grey.shade100,
                   value: selectedClass,
                   items: classes.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Text(
                         value,
-                        style: TextStyle(fontSize: 30),
+                        style: TextStyle(
+                            color : Colors.black54
+                            ,fontSize: 30),
                       ),
                     );
                   }).toList(),
@@ -113,7 +115,10 @@ class _TeacherState extends State<TeacherPage> {
                   },
                   hint: Text(
                     '  Select the class',
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(
+                        fontSize: 30,
+                    color: Colors.white
+                    ),
                   ),
                 ),
               ),

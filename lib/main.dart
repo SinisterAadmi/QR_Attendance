@@ -13,6 +13,7 @@ import 'package:qr_attendance/Student/StudentLoginSignUp.dart';
 import 'package:qr_attendance/Teacher/TeacherLogin.dart';
 import 'package:qr_attendance/Teacher/TeacherLoginSignUp.dart';
 import 'package:qr_attendance/Teacher/Teacher.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const String serviceRoleKey = String.fromEnvironment('SERVICE_ROLE_KEY');
 
@@ -29,6 +30,11 @@ Future<void> main() async {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: 'login',
+    theme: ThemeData(
+      textTheme: GoogleFonts.questrialTextTheme(),
+
+
+    ),
     routes: {
       'login': (context)=>LoginPage(),
       'teacher button': (context)=>TeacherloginSignUp(),

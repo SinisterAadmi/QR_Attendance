@@ -28,7 +28,7 @@ class StudentPage extends StatelessWidget {
               padding: EdgeInsets.only(left: 20, top:100),
               child: Text('Welcome, \n$name' ,
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),

@@ -52,7 +52,7 @@ class _StudentSignupState extends State<StudentSignup> {
                     decoration: TextDecoration.none,
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -68,11 +68,15 @@ class _StudentSignupState extends State<StudentSignup> {
                         children: [
                           Text("  Select your Division", style: TextStyle(
                             fontSize: 20,
+                            color: Colors.white
                           )),
                           Padding(
                             padding: const EdgeInsets.only(left: 40),
                             child: DropdownButton<String>(
-                              dropdownColor: Colors.grey.shade200,
+                              dropdownColor: Colors.black54,
+                              style: TextStyle(
+                                color: Colors.white
+                              ),
                               value: _Division,
                               items: ['A', 'B', 'C', 'D'].map<DropdownMenuItem<String>>((String value) {
                                 return DropdownMenuItem<String>(
@@ -95,11 +99,15 @@ class _StudentSignupState extends State<StudentSignup> {
                         children: [
                           Text("  Select your Year", style: TextStyle(
                             fontSize: 20,
+                            color: Colors.white
                           )),
                           Padding(
                             padding: const EdgeInsets.only(left: 70),
                             child: DropdownButton<String>(
-                              dropdownColor: Colors.grey.shade200,
+                              style: TextStyle(
+                                color: Colors.white
+                              ),
+                              dropdownColor: Colors.black54,
                               value: _Year,
                               items: ['FE', 'SE', 'TE', 'BE'].map<DropdownMenuItem<String>>((String value) {
                                 return DropdownMenuItem<String>(

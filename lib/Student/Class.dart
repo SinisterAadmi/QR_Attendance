@@ -32,10 +32,10 @@ class FinalPage extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 20, top:100),
-              child: Text('Class, \n$name' ,
+              padding: EdgeInsets.only(left: 95, top:100),
+              child: Text('Class $name ' ,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                 ),
@@ -45,6 +45,7 @@ class FinalPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () async {
                   Position stdlocation = await getCurrentLocation();
+                  print('${stdlocation.longitude} , ${stdlocation.latitude}');
                   splitQrData(getQRvalue());
                   if(comparelocation(stdlocation.latitude, stdlocation.longitude, getQRlat(), getQRlng())){
                     markAttendance(getQRclassn(), getQRcurrentDate(), _rollnoofstudent);

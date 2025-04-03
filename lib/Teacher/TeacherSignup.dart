@@ -43,7 +43,7 @@ class _TeacherSignupState extends State<TeacherSignup> {
                   decoration: TextDecoration.none,
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -174,7 +174,7 @@ class _TeacherSignupState extends State<TeacherSignup> {
                               Text(
                                 "Sign Up",
                                 style: TextStyle(
-                                    color: Colors.black87, fontSize: 20),
+                                    color: Colors.white70, fontSize: 20),
                               ),
                             ],
                           ),

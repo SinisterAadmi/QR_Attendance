@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StudentloginSignUp extends StatelessWidget {
   const StudentloginSignUp({super.key});
@@ -14,7 +15,8 @@ class StudentloginSignUp extends StatelessWidget {
             style: TextStyle(
               decoration: TextDecoration.none,
               fontSize: 50 ,
-              color: Colors.black,
+              color: Colors.white,
+              fontFamily: GoogleFonts.questrial().fontFamily,
               fontWeight: FontWeight.bold,
             ),
           ),

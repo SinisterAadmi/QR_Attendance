@@ -35,12 +35,12 @@ class _StudentloginState extends State<Studentlogin> {
               Container(
                 color: Colors.transparent,
                 padding: EdgeInsets.only(left: 40, top:100),
-                child: Text('Student Login' ,
+                child: Text('Student Login',
                   style: TextStyle(
                     decoration: TextDecoration.none,
                     fontSize: 50,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
               ),
